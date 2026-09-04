@@ -16,7 +16,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 
 MAX_UPLOAD_BYTES = 30 * 1024 * 1024
-ALLOWED_ORIGINS = ["http://localhost:5500", "http://127.0.0.1:5500", "http://localhost:8000"]
+ALLOWED_ORIGINS = ["http://localhost:5500", "http://127.0.0.1:5500", "http://localhost:8000","https://neonsight-seven.vercel.app"]
 PALETTE = ["#00f2fe", "#7928ca", "#ff0080", "#00e676", "#ff9f03", "#4facfe", "#ff5e62", "#c6ff00"]
 
 app = FastAPI(title="Enterprise Smart Data Analyzer", version="2.0.0")
