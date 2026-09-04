@@ -1,4 +1,4 @@
-const API = 'http://127.0.0.1:8000';
+const API_URL = 'https://neonsight.onrender.com';
 const chartInstances = {};
 const colors = ['#00f2fe', '#7928ca', '#ff0080', '#00e676', '#ff9f03', '#4facfe', '#ff5e62', '#c6ff00'];
 const $ = selector => document.querySelector(selector);
