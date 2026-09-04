@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="theme-color" content="#070a12" />
+  <title>NeonSight · Data Analytics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="glow glow-cyan"></div><div class="glow glow-pink"></div><div class="noise"></div>
+  <main class="shell">
+    <header class="topbar glass"><a class="brand" href="#"><span><i data-lucide="orbit"></i></span><b>NeonSight</b><small>ANALYTICS OS</small></a><div id="connection" class="connection"><i></i> <span>Checking engine</span></div></header>
+    <section class="hero"><p>ADAPTIVE DATA INTELLIGENCE</p><h1>Every dataset.<br /><em>Instant clarity.</em></h1><span>Automatically mapped visual intelligence for CSV and Excel files.</span></section>
+    <section id="upload-section" class="upload-shell glass">
+      <label id="drop-zone" class="drop-zone" for="file-input"><input id="file-input" type="file" accept=".csv,.xlsx" /><span class="upload-icon"><i data-lucide="scan-line"></i></span><strong>Drop your data universe here</strong><span>or select a CSV / XLSX file from your computer</span><small>30 MB maximum · processed in memory</small></label>
+      <div id="loader" class="loader hidden"><div class="skeleton-line"></div><div class="skeleton-line short"></div><span>Inspecting schema, quality, and relationships…</span></div><p id="error" class="error hidden"></p>
+    </section>
+    <section id="dashboard" class="dashboard hidden">
+      <div class="section-header"><div><p id="file-name">DATASET</p><h2>Executive signal board</h2></div><button id="new-file"><i data-lucide="rotate-ccw"></i> New analysis</button></div>
+      <div class="kpi-grid">
+        <article class="kpi glass"><i data-lucide="table-2"></i><span>Total rows</span><b id="rows">—</b></article><article class="kpi glass"><i data-lucide="columns-3"></i><span>Total columns</span><b id="columns">—</b></article><article class="kpi glass"><i data-lucide="circle-alert"></i><span>Missing data</span><b id="missing">—</b><small id="missing-detail"></small></article><article class="kpi glass"><i data-lucide="memory-stick"></i><span>Memory usage</span><b id="memory">—</b></article><article class="kpi glass"><i data-lucide="copy-x"></i><span>Duplicate rows</span><b id="duplicates">—</b></article><article class="kpi glass"><i data-lucide="binary"></i><span>Primary data type</span><b id="primary-type">—</b></article>
+      </div>
+      <div class="chart-grid">
+        <article class="chart-card glass"><header><span class="badge pink"><i data-lucide="heart-pulse"></i></span><div><h3>Data health</h3><p>Complete vs. missing cells</p></div></header><div class="canvas-wrap"><canvas id="health-chart"></canvas></div><div id="health-legend" class="legend"></div></article>
+        <article class="chart-card glass"><header><span class="badge amber"><i data-lucide="list-tree"></i></span><div><h3>Value concentration</h3><p id="category-subtitle">Leading categories</p></div></header><div class="canvas-wrap"><canvas id="category-chart"></canvas><p id="category-empty" class="empty hidden">No category distribution found.</p></div></article>
+        <article class="chart-card glass"><header><span class="badge cyan"><i data-lucide="chart-no-axes-combined"></i></span><div><h3>Adaptive trend</h3><p id="trend-subtitle">Primary numeric signal</p></div></header><div class="canvas-wrap"><canvas id="trend-chart"></canvas><p id="trend-empty" class="empty hidden">No numeric signal found.</p></div></article>
+        <article class="chart-card glass"><header><span class="badge purple"><i data-lucide="radar"></i></span><div><h3>Dataset profile</h3><p>Structural balance score</p></div></header><div class="canvas-wrap"><canvas id="radar-chart"></canvas></div></article>
+        <article class="chart-card wide glass"><header><span class="badge green"><i data-lucide="chart-bar-big"></i></span><div><h3>Range intelligence</h3><p>Minimum, mean, and maximum across key measures</p></div></header><div class="canvas-wrap"><canvas id="range-chart"></canvas><p id="range-empty" class="empty hidden">No numerical ranges found.</p></div></article>
+        <article class="chart-card wide glass"><header><span class="badge cyan"><i data-lucide="git-merge"></i></span><div><h3>Relationship explorer</h3><p id="scatter-subtitle">Strongest measurable relationship</p></div></header><div class="canvas-wrap"><canvas id="scatter-chart"></canvas><p id="scatter-empty" class="empty hidden">Two numeric dimensions are needed to map a relationship.</p></div></article>
+      </div>
+      <section class="preview glass"><button id="preview-toggle" aria-expanded="false"><span><i data-lucide="braces"></i> Raw data preview <small>First 10 records</small></span><i data-lucide="chevron-down"></i></button><div id="table-container" class="table-container hidden"></div></section>
+    </section>
+  </main>
+  <script src="https://unpkg.com/lucide@latest"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script><script src="app.js"></script>
+</body>
+</html>
